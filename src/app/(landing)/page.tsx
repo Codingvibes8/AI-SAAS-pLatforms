@@ -2,6 +2,7 @@
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 
+
 const LandingPage = () => {
     return (<>
         <p>landing page</p>
@@ -13,6 +14,7 @@ const LandingPage = () => {
         <Link href='/sign-up'>
             <button>register</button>
         </Link>
+
 </div>;
     </>)
 };
