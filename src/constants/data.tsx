@@ -18,43 +18,42 @@ export const routes = [
         label: 'Dashboard',
         href: '/dashboard',
         icon: LayoutIcon,
-        color: 'text-rose-300'
+        color: 'text-rose-700'
     },
     {
         label: 'Conversation',
         href: '/conversation',
         icon: MessageSquareIcon,
-        color: 'text-sky-300'
-    },
-    {
-        label: 'Image Generation',
-        href: '/image',
-        icon: ImageIcon,
-        color: 'text-pink-200'
-    },
-    {
-        label: 'Video Generation',
-        href: '/video',
-        icon: VideoIcon,
-        color: 'text-green-300'
+        color: 'text-sky-700'
     },
     {
         label: 'Code',
         href: '/code',
         icon: Code,
-        color: 'text-emerald-300'
+        color: 'text-emerald-700'
+    },
+    {
+        label: 'Image Generation',
+        href: '/image',
+        icon: ImageIcon,
+        color: 'text-pink-800'
+    },
+    {
+        label: 'Video Generation',
+        href: '/video',
+        icon: VideoIcon,
+        color: 'text-green-600'
     },
     {
         label: 'Music Generation',
         href: '/music',
         icon: Music,
-        color: 'text-orange-300'
+        color: 'text-orange-500'
     },
-
     {
         label: 'Settings',
         href: '/setting',
         icon: Settings,
-        color: 'text-emerald-400'
+        color: 'text-emerald-700'
     },
 ]
