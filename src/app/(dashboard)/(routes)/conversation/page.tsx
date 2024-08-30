@@ -10,7 +10,7 @@ import { toast } from "react-hot-toast";
 import { MessageSquare } from "lucide-react";
 
 
-import { BotAvatar } from "@/components/bot-avatar";
+ import { BotAvatar } from "@/components/bot-avatar";
 import { Empty } from "@/components/empty";
 import { Heading } from "@/components/heading";
 import  Loader  from "../../../../components/Loader";
@@ -21,11 +21,16 @@ import { UserAvatar } from "@/components/user-avatar";
 import { cn } from "@/lib/utils";
 import useProModal from "@/hooks/use-pro-modal";
 import { formSchema } from "./constants";
+import Image from "next/image";
+import {Montserrat} from "next/font/google";
 
 
 
 
-
+const montserrat= Montserrat({
+    weight:'600',
+    subsets:['latin']
+})
 
 const ConversationPage = () => {
     const router = useRouter();
@@ -41,10 +46,12 @@ const ConversationPage = () => {
 
     const isLoading = form.formState.isSubmitting;
 
+
+
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         console.log(values);
         try {
-            const userMessage: ChatCompletionParams = {
+            const userMessage = {
                 role: "user",
                 content: values.prompt,
             };
@@ -69,7 +76,17 @@ const ConversationPage = () => {
     };
 
     return (
-        <div>
+        <section>
+            <div className={'py-2 px-3 flex-1'}>
+                <div className={'flex items-center justify-center mb-10 pt-10 gap-x-1'}>
+                    <div className={'relative w-8 h-8'}>
+                        <Image src='/box.svg' fill alt='logo-image'/>
+                    </div>
+                    <div className={cn("text-3xl font-bold", montserrat.className)}>
+                        <h1 className={'text-green-800'}>Maxim AI</h1>
+                    </div>
+                </div>
+            </div>
             <Heading
                 title="Conversation"
                 description="Advanced AI conversation model."
@@ -128,7 +145,7 @@ const ConversationPage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
